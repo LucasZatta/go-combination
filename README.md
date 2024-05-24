@@ -26,6 +26,14 @@ Simple api structure implemented to handle a single POST route that solves the s
 Given an American Football match score, find how many unique combinations there are given the following score rules:</br>
   - Touchdow: 6 points -> followed by an extra 1 or 2 points (or zero) </br>
   - Field Goal: 3 points with no extras
+### Solution
+For each possible scoring option, we can either include it on the target sum, or exclude it. By including it, we call the verify function recursively with the new sum value and the set of possible scoring options. If we exclude it, the function is called recursively with the same sum and the number of the remaining scoring options(len({3,6,7,8}) -1).
+
+Our base cases for this approach are:
+- When the sum is 0, which means the only way to "progress" further is by selecting NO scoring option. So we return 1.
+- when the sum is negative, which means that the current branch is impossible for that case. Returning 0.
+
+The time complexity for this implementation is O(2<sup>sum</sup>)
 
 ## Rest API
 ### POST    /verify

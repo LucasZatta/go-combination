@@ -23,9 +23,9 @@
 Simple api structure implemented to handle a single POST route that solves the score combination problem.
 
 ### Score Combinations
-Given an American Football match score, find how many unique combinations there are given the following score rules:
-  Touchdow: 6 points -> followed by an extra 1 or 2 points (or zero)
-  Field Goal: 3 points with no extras
+Given an American Football match score, find how many unique combinations there are given the following score rules:</br>
+  - Touchdow: 6 points -> followed by an extra 1 or 2 points (or zero) </br>
+  - Field Goal: 3 points with no extras
 
 ## Rest API
 ### POST    /verify

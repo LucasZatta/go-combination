@@ -35,3 +35,17 @@ Response Example: {"combinations" : "4"}
 
 ## Running the project
 `docker run -p 8080:8080 lucasszatta/go-sol-combinations:latest`
+
+## Extra
+Attempt at solving the score combination problem, which is essentially a number partition problem given a limited set of numbers(6,7,8,3), using recursion.
+Did not manage to think of a solution using this initial approach that would return me only the UNIQUE combinations.
+```
+func verify(n int) int {
+	if n == 0 {
+		return 1
+	} else if n < 0 {
+		return 0
+	}
+	return (verify(n-6) + verify(n-7) + verify(n-8) + verify(n-3))
+}
+```
